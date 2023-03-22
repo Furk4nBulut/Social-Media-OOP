@@ -1,5 +1,6 @@
 package ooplab4.socailmedia;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class User {
@@ -91,9 +92,30 @@ public class User {
     public String getEmail(){
         return this.email;
     }
+
     public void setEmail(String email){
         this.email = email;
     }
+    public Message[] getOutbox() {
+        return Arrays.copyOf(outbox, outBoxCount);
+    }
+    public Message[] getInbox() {
+        return inbox;
+    }
 
+    public int getMessageIndex(Message[] messages, Message message) {
+        for (int i = 0; i < messages.length; i++) {
+            if (messages[i] == message) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    public String getName() {return this.name;
+    }public User[] getFriends() {
+        return friends;
+    }
 
 }
