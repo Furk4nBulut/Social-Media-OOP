@@ -13,8 +13,9 @@ public class Main {
 
         user1.addFriend(user2);
         user2.addFriend(user1);
-
-        MessageGUI gui = new MessageGUI(user1, user2);
+        user1.sendMessage("Merhaba",user2);
+        user1.writeOutboxByIndex(0);
+        user2.writeInboxByIndex(0);
     }
     
 }

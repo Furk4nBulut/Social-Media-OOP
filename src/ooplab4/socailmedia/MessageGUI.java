@@ -97,6 +97,7 @@ public class MessageGUI extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
+            Date d = new Date();
             User user1 = new User("Furkan","Bulut","ToFuDuK","210316011","furkan",d,"male");
             User user2 = new User("Ahmet","Bulut","InfinityOfDeath","ahmet","ahmet",d,"male");
 
