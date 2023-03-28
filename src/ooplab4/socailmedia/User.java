@@ -112,10 +112,83 @@ public class User {
         return -1;
     }
 
+    public String getName() {
+        return name;
+    }
 
-    public String getName() {return this.name;
-    }public User[] getFriends() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public User[] getFriends() {
         return friends;
     }
 
+    public void setFriends(User[] friends) {
+        this.friends = friends;
+    }
+
+    public int getFriendsCount() {
+        return friendsCount;
+    }
+
+    public void setFriendsCount(int friendsCount) {
+        this.friendsCount = friendsCount;
+    }
+
+    public void setInbox(Message[] inbox) {
+        this.inbox = inbox;
+    }
+
+    public void setOutbox(Message[] outbox) {
+        this.outbox = outbox;
+    }
+
+    public int getInboxCount() {
+        return inboxCount;
+    }
+
+    public void setInboxCount(int inboxCount) {
+        this.inboxCount = inboxCount;
+    }
+
+    public int getOutBoxCount() {
+        return outBoxCount;
+    }
+
+    public void setOutBoxCount(int outBoxCount) {
+        this.outBoxCount = outBoxCount;
+    }
 }
