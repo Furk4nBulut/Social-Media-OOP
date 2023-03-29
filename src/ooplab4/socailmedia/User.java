@@ -144,7 +144,6 @@ public class User {
                 this.posts[i] = temp[i];
             }
         }
-
         this.posts[postCount]=p;
         postCount++;
     }
