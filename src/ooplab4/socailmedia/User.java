@@ -43,6 +43,7 @@ public class User {
         this.likedPostCount =0;
         this.posts = new Post[10];
         this.postCount =0;
+        this.comments = new Comment[10];
 
 
     }
