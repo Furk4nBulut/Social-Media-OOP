@@ -27,13 +27,13 @@ public User getSender(){
 }public User getReceiver(){
         return this.receiver;
 }
-    public static int getMessageIndex(Message[] messages, Message message) {
+   /* public static int getMessageIndex(Message[] messages, Message message) {
         for (int i = 0; i < messages.length; i++) {
             if (messages[i] == message) {
                 return i;
             }
         }
         return -1;
-    }
+    }*/
 
 }
