@@ -44,6 +44,7 @@ public class User {
         this.posts = new Post[10];
         this.postCount =0;
 
+
     }
     public void addFriend(User u){
         if(this.friendsCount == this.friends.length){
@@ -115,14 +116,14 @@ public class User {
         return inbox;
     }
 
-    public int getMessageIndex(Message[] messages, Message message) {
+  /*  public int getMessageIndex(Message[] messages, Message message) {
         for (int i = 0; i < messages.length; i++) {
             if (messages[i] == message) {
                 return i;
             }
         }
         return -1;
-    }
+    }*/
     public void Like(Post p){
     if (this.likedPostCount >this.likedPosts.length -1){
         Post [] temp = likedPosts;
@@ -149,9 +150,9 @@ public class User {
     }
     public void addComment(Post p , String text){
         Comment c = new Comment(this, text,p);
-        if (this.commentCounter >this.comments.length -1){
+        if (this.commentCounter > this.comments.length-1){
             Comment [] temp = comments;
-            this.comments = new Comment[temp.length+2];
+            this.comments = new Comment[temp.length*2];
             for ( int i = 0;i<temp.length; i++){
                 this.comments[i] = temp[i];
             }

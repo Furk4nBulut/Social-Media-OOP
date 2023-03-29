@@ -41,6 +41,6 @@ public class Post {
             }
         }
         this.comments[commentCount] = c;
-        commentCount++;
+        this.commentCount++;
     }
 }
