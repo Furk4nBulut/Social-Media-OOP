@@ -19,6 +19,13 @@ public class User {
 
     private int inboxCount;
     private  int outBoxCount;
+    private int likedPostCount;
+    private Post[] likedPosts;
+    private Post [] posts;
+    private  int postCount;
+    private Comment [] comments;
+    private int commentCounter;
+
 
 
     public User(String name,String surname, String username,String email,String password,Date birthdate,String gender){
@@ -32,6 +39,11 @@ public class User {
         this.friends =new  User[10];
         this.inbox = new Message[10];
         this.outbox = new Message[10];
+        this.likedPosts = new Post[10];
+        this.likedPostCount =0;
+        this.posts = new Post[10];
+        this.postCount =0;
+
     }
     public void addFriend(User u){
         if(this.friendsCount == this.friends.length){
@@ -111,7 +123,45 @@ public class User {
         }
         return -1;
     }
+    public void Like(Post p){
+    if (this.likedPostCount >this.likedPosts.length -1){
+        Post [] temp = likedPosts;
+        this.likedPosts = new Post[(temp.length-1)];
+        for ( int i = 0;i<temp.length; i++){
+            this.likedPosts[i] = temp[i];
+    }
+    }
+    p.addLike(this);
+    this.likedPosts[likedPostCount]=p;
+    likedPostCount++;
+    }
+    public void addPost (String text,String mediaUrl){
+        Post p = new Post(this,text,mediaUrl);
+        if (this.postCount >this.posts.length -1){
+            Post [] temp = posts;
+            this.posts = new Post[temp.length+2];
+            for ( int i = 0;i<temp.length; i++){
+                this.posts[i] = temp[i];
+            }
+        }
 
+        this.posts[postCount]=p;
+        postCount++;
+    }
+    public void addComment(Post p , String text){
+        Comment c = new Comment(this, text,p);
+        if (this.commentCounter >this.comments.length -1){
+            Comment [] temp = comments;
+            this.comments = new Comment[temp.length+2];
+            for ( int i = 0;i<temp.length; i++){
+                this.comments[i] = temp[i];
+            }
+        }
+        this.comments[commentCounter]=c;
+        commentCounter++;
+        p.addComment(c);
+
+    }
     public String getName() {
         return name;
     }
