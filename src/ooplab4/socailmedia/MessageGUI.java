@@ -20,6 +20,7 @@ public class MessageGUI extends JFrame {
         this.currentUser = currentUser;
         this.friend = friend;
 
+
         JPanel mainPanel = new JPanel(new BorderLayout());
 
         conversationArea = new JTextArea(10, 40);

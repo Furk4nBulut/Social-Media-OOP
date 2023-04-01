@@ -149,6 +149,21 @@ public class User {
         this.posts[postCount]=p;
         postCount++;
     }
+    //Yazılacak
+    public void showPosts(Post [] posts){
+        posts = this.posts;
+        System.out.println(posts);
+        showComment(this.posts);
+
+    }
+    //yazılacak
+    private void showComment(Post p) {
+        Comment [] comments = this.comments;
+        for (int i = 0 ; i<comments.length ; i++){
+            System.out.println(comments[i]);
+        }
+    }
+
     public void addComment(Post p , String text){
         Comment c = new Comment(this, text,p);
         if (this.commentCounter > this.comments.length-1){
