@@ -137,24 +137,24 @@ public class User {
     this.likedPosts[likedPostCount]=p;
     likedPostCount++;
     }
-    public void addPost (String text,String mediaUrl){
+    public void addPost (String text,String mediaUrl){ // there is a bug in this class this is not working well
         Post p = new Post(this,text,mediaUrl);
-        if (this.postCount >this.posts.length -1){
+        if (this.postCount >this.posts.length -11){
             Post [] temp = posts;
             this.posts = new Post[temp.length+2];
             for ( int i = 0;i<temp.length; i++){
-                this.posts[i] = temp[i];
+                this.posts[i+1] = temp[i];
             }
         }
         this.posts[postCount]=p;
         postCount++;
     }
     //Yazılacak
-    public void showPosts(Post [] posts){
-        posts = this.posts;
-        System.out.println(posts);
-        showComment(this.posts);
+    public void showPosts(Post p) {
 
+        for( int i =0; i<this.posts.length;i++){
+                System.out.println(p.getPost(p));
+        }
     }
     //yazılacak
     private void showComment(Post p) {
@@ -166,7 +166,7 @@ public class User {
 
     public void addComment(Post p , String text){
         Comment c = new Comment(this, text,p);
-        if (this.commentCounter > this.comments.length-1){
+        if (this.commentCounter > this.comments.length-11){
             Comment [] temp = comments;
             this.comments = new Comment[temp.length*2];
             for ( int i = 0;i<temp.length; i++){

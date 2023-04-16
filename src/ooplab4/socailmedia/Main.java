@@ -7,7 +7,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Date d = new Date();
+     /*   Date d = new Date();
         User user1 = new User("Furkan","Bulut","ToFuDuK","210316011","furkan",d,"male");
         User user2 = new User("Ahmet","Bulut","InfinityOfDeath","ahmet","ahmet",d,"male");
 
@@ -21,7 +21,18 @@ public class Main {
         user1.addComment(p,"yorum");
         user2.Like(p);
         user1.writeOutboxByIndex(0);
-        user2.writeInboxByIndex(0);
+        user2.writeInboxByIndex(0);*/
+
+        //Homework Lines
+        Date  d = new Date();
+        User user1 = new User("Furkan","Bulut","ToFuDuK","210316011","furkan",d,"male");
+        User user2 = new User("Ahmet","Bulut","InfinityOfDeath","ahmet","ahmet",d,"male");
+        User user3 = new User("User3","Bulut","User3","User3","User3",d,"male");
+
+        Post p = new Post(user1,"First post", "USER1_URl");
+        user1.addPost("This is the first post which has user1", "USER1_URL");
+        user3.addComment(p, "This is my first comment");
+        user1.showPosts(p);
     }
     
 }

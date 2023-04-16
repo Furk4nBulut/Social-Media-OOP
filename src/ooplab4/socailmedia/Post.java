@@ -8,6 +8,8 @@ public class Post {
     private Comment[] comments;
     private int likersCount;
     private int commentCount;
+    private int postCount;
+
 
     public Post(User poster,String text,String mediaUrl){
         this.poster = poster;
@@ -42,6 +44,10 @@ public class Post {
         }
         this.comments[commentCount] = c;
         this.commentCount++;
+    }
+    public String getPost(Post post){
+        String postformat = text + mediaUrl;
+        return  postformat;
     }
 
 }
