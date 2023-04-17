@@ -30,6 +30,7 @@ public class Post {
             }
         }
         this.likers[likersCount] = liker;
+        likersCount++;
     }
     public void addComment(Comment c){
         if(this.commentCount == this.comments.length){
