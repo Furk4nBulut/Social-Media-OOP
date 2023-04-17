@@ -30,9 +30,13 @@ public class Main {
         User user3 = new User("User3","Bulut","User3","User3","User3",d,"male");
 
         Post p = new Post(user1,"First post", "USER1_URl");
-        user1.addPost("This is the first post which has user1", "USER1_URL");
-        user3.addComment(p, "This is my first comment");
-        user1.showPosts(p);
+        user1.addPost(p,"This is the first post which has user1", "USER1_URL");
+        user3.addComment(p,"Comment");
+        user2.Like(p);
+
+        user1.displayAllPosts();
+
+
     }
     
 }

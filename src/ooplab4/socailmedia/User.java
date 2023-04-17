@@ -1,5 +1,6 @@
 package ooplab4.socailmedia;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -25,6 +26,7 @@ public class User {
     private  int postCount;
     private Comment [] comments;
     private int commentCounter;
+
 
 
 
@@ -137,32 +139,39 @@ public class User {
     this.likedPosts[likedPostCount]=p;
     likedPostCount++;
     }
-    public void addPost (String text,String mediaUrl){ // there is a bug in this class this is not working well
-        Post p = new Post(this,text,mediaUrl);
+    public void addPost(Post p,String text,String mediaUrl){ // there is a bug in this class this is not working well
+        p.setText(text);
+        p.setMediaUrl(mediaUrl);
         if (this.postCount >this.posts.length -11){
             Post [] temp = posts;
-            this.posts = new Post[temp.length+2];
+            this.posts = new Post[temp.length*2];
             for ( int i = 0;i<temp.length; i++){
-                this.posts[i+1] = temp[i];
+                this.posts[i] = temp[i];
             }
         }
         this.posts[postCount]=p;
         postCount++;
+
     }
     //Yazılacak
-    public void showPosts(Post p) {
+    public void displayAllPosts() {
 
-        for( int i =0; i<this.posts.length;i++){
-                System.out.println(p.getPost(p));
+        for (int i = 0; i < postCount; i++) {
+            System.out.println("Post #" + (i+1));
+            System.out.println("Poster: " + posts[i].getPoster().getUsername());
+            System.out.println("Text: " + posts[i].getText());
+            System.out.println("Media URL: " + posts[i].getMediaUrl());
+            System.out.println("Likes: " + posts[i].getLikersCount());
+            System.out.println("Comments: " + posts[i].getCommentCount());
+            System.out.println();
+            posts[i].showComments();
         }
     }
+
+
     //yazılacak
-    private void showComment(Post p) {
-        Comment [] comments = this.comments;
-        for (int i = 0 ; i<comments.length ; i++){
-            System.out.println(comments[i]);
-        }
-    }
+
+
 
     public void addComment(Post p , String text){
         Comment c = new Comment(this, text,p);
@@ -178,6 +187,8 @@ public class User {
         p.addComment(c);
 
     }
+
+
     public String getName() {
         return name;
     }
