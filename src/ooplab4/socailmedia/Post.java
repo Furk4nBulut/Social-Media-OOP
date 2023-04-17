@@ -32,6 +32,22 @@ public class Post {
         this.likers[likersCount] = liker;
         likersCount++;
     }
+    public void showLikers() {
+        String[] likerNames = new String[this.likersCount];
+        System.out.printf("\t%d Likers:\n", likersCount);
+
+        for (int i = 0; i < this.likersCount; i++) {
+            likerNames[i] = this.likers[i].getName();
+            if(i==0){
+                System.out.print("\t" +likerNames[i] + " ");
+            } else{
+                System.out.print(likerNames[i] + " ");
+
+            }
+        }
+
+    }
+
     public void addComment(Comment c){
         if(this.commentCount == this.comments.length){
             Comment tempArray[] = this.comments;

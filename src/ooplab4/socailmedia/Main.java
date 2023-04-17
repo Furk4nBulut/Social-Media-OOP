@@ -33,7 +33,10 @@ public class Main {
         user1.addPost(p,"This is the first post which has user1", "USER1_URL");
         user3.addComment(p,"Comment");
         user2.Like(p);
+        user1.Like(p);
+        user2.Like(p);
         user1.displayAllPosts();
+        p.showLikers();
 
 
     }
