@@ -154,7 +154,7 @@ public class User {
 
     }
     //Yazılacak
-    public void displayAllPosts() {
+    public void displayUserPosts() {
 
         for (int i = 0; i < postCount; i++) {
             System.out.println("Post #" + (i+1));
@@ -188,7 +188,7 @@ public class User {
 
     }
     // All comments which has a user.
-    public void displayAllComments() {
+    public void displayUserComments() {
         if (commentCounter == 0) {
             System.out.println("There is no comment which has this User.");
         } else {

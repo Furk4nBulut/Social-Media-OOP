@@ -35,12 +35,14 @@ public class Main {
         user2.Like(p);
         user1.Like(p);
         user3.Like(p);
-        user1.displayAllPosts();
+        //This method show all posts user.
+        user1.displayUserPosts();
+        //this method show likers a post
         p.showLikers();
         System.out.println(" ");
        //this method show all comments which user has.And show its posts
-        user3.displayAllComments();
-
+        user3.displayUserComments();
+        //write a method which is shıw all posts.  like this p.displayPosts
 
     }
     
