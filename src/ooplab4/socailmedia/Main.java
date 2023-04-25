@@ -25,16 +25,16 @@ public class Main {
 
         //Homework Lines
         Date  d = new Date();
-        User user1 = new User("Furkan","Bulut","ToFuDuK","210316011","furkan",d,"male");
-        User user2 = new User("Ahmet","Bulut","InfinityOfDeath","ahmet","ahmet",d,"male");
-        User user3 = new User("User3","Bulut","User3","User3","User3",d,"male");
+        User user1 = new User("Furkan","Bulut","Furkan Bulut","210316011","furkan",d,"male");
+        User user2 = new User("Ahmet","Bulut","Ahmet Bulut","ahmet","ahmet",d,"male");
+        User user3 = new User("User3","Bulut","User Three","User3","User3",d,"male");
 
         Post p = new Post(user1,"First post", "USER1_URl");
         user1.addPost(p,"This is the first post which has user1", "USER1_URL");
         user3.addComment(p,"This one has user3");
         user2.Like(p);
         user1.Like(p);
-        user2.Like(p);
+        user3.Like(p);
         user1.displayAllPosts();
         p.showLikers();
         System.out.println(" ");

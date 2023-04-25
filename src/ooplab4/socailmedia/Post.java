@@ -33,16 +33,18 @@ public class Post {
         likersCount++;
     }
     public void showLikers() {
-        String[] likerNames = new String[this.likersCount];
+        String[] likerUsername = new String[this.likersCount];
         System.out.printf("\t%d Likers:\n", likersCount);
 
         for (int i = 0; i < this.likersCount; i++) {
-            likerNames[i] = this.likers[i].getName();
-            if(i==0){
-                System.out.print("\t" +likerNames[i] + " ");
-            } else{
-                System.out.print(likerNames[i] + " ");
-
+            likerUsername[i] = this.likers[i].getUsername();
+            if(i==0){ // this statement just for format
+                System.out.print("\t" +likerUsername[i] + ", ");
+            }else if (i == (likersCount-1)){
+                System.out.println(likerUsername[i] + ".");
+            }
+            else{
+                System.out.print(likerUsername[i] + ", ");
             }
         }
         System.out.println(" ");
