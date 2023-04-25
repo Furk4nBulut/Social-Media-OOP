@@ -31,12 +31,15 @@ public class Main {
 
         Post p = new Post(user1,"First post", "USER1_URl");
         user1.addPost(p,"This is the first post which has user1", "USER1_URL");
-        user3.addComment(p,"Comment");
+        user3.addComment(p,"This one has user3");
         user2.Like(p);
         user1.Like(p);
         user2.Like(p);
         user1.displayAllPosts();
         p.showLikers();
+        System.out.println(" ");
+       //this method show all comments which user has.And show its posts
+        user3.displayAllComments();
 
 
     }

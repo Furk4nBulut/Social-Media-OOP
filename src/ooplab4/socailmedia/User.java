@@ -187,6 +187,21 @@ public class User {
         p.addComment(c);
 
     }
+    // All comments which has a user.
+    public void displayAllComments() {
+        if (commentCounter == 0) {
+            System.out.println("There is no comment which has this User.");
+        } else {
+            System.out.println("Comments which has " + this.username + ":");
+            for (int i = 0; i < commentCounter; i++) {
+                System.out.println("- " + comments[i].getText() +" (on post by " + comments[i].getPost().getPoster().getUsername()+ ") "+
+                                "[Post Message: "+ comments[i].getText() + " ]"
+                        );
+            }
+        }
+    }
+
+
 
 
     public String getName() {

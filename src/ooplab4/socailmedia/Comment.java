@@ -27,7 +27,7 @@ public class Comment {
         Text = text;
     }
 
-    public Post getP() {
+    public Post getPost() {
         return p;
     }
 
